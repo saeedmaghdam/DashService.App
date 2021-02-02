@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Hosting;
+﻿using Autofac;
+using Autofac.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
@@ -15,6 +17,8 @@ namespace DashService.App
         {
             return Host.CreateDefaultBuilder(args)
                 .UseWindowsService()
+                .UseServiceProviderFactory(new AutofacServiceProviderFactory())
+                .ConfigureContainer<ContainerBuilder>(ConfigureContainer)
                 .ConfigureServices((hostBuilderContext, services) =>
                 {
                     services.AddHostedService<Worker.WorkerStartup>();
@@ -23,6 +27,11 @@ namespace DashService.App
                 {
                     webBuilder.UseStartup<WebApi.HostStartup>();
                 });
+        }
+
+        public static void ConfigureContainer(ContainerBuilder builder)
+        {
+            Logger.DependencyRegistration.RegisterModules(builder);
         }
     }
 }
