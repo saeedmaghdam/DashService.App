@@ -26,13 +26,13 @@ namespace DashService.App
                 .UseWindowsService()
                 .UseServiceProviderFactory(new AutofacServiceProviderFactory())
                 .ConfigureContainer<ContainerBuilder>(ConfigureContainer)
-                .ConfigureServices((hostBuilderContext, services) =>
-                {
-                    services.AddHostedService<Worker.WorkerStartup>();
-                })
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<WebApi.HostStartup>();
+                })
+                .ConfigureServices((hostBuilderContext, services) =>
+                {
+                    services.AddHostedService<Worker.WorkerStartup>();
                 });
         }
 
