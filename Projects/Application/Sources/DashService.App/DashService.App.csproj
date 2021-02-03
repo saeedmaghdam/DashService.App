@@ -18,6 +18,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="DashService.Job">
+      <HintPath>..\..\Libs\DashService.Job.dll</HintPath>
+    </Reference>
+    <Reference Include="DashService.Job.Abstraction">
+      <HintPath>..\..\Libs\DashService.Job.Abstraction.dll</HintPath>
+    </Reference>
     <Reference Include="DashService.Logger">
       <HintPath>..\..\..\..\..\DashService.Job\Projects\Application\Libs\DashService.Logger.dll</HintPath>
     </Reference>
