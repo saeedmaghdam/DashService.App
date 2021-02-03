@@ -18,6 +18,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="DashService.Context">
+      <HintPath>..\..\Libs\DashService.Context.dll</HintPath>
+    </Reference>
     <Reference Include="DashService.Job">
       <HintPath>..\..\Libs\DashService.Job.dll</HintPath>
     </Reference>
