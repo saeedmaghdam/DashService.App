@@ -33,6 +33,9 @@
     <Reference Include="DashService.WebApi">
       <HintPath>..\..\Libs\DashService.WebApi.dll</HintPath>
     </Reference>
+    <Reference Include="DashService.WebSocket">
+      <HintPath>..\..\Libs\DashService.WebSocket.dll</HintPath>
+    </Reference>
     <Reference Include="DashService.Worker">
       <HintPath>..\..\Libs\DashService.Worker.dll</HintPath>
     </Reference>
